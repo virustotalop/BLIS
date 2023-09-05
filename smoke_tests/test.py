@@ -1,17 +1,16 @@
 from abc import ABC, abstractmethod
 import unittest
+import global_variables
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-blis_url = "http://172.24.80.1:4001"
-
 class Test(ABC, unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox()
-        self.driver.get(blis_url)
+        self.driver.get(global_variables.blis_url)
 
     @abstractmethod
     def runTest(self):
