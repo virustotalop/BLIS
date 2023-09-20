@@ -264,17 +264,13 @@ $logo_path2 = "../ajax/logo_".$lab_config_id.".jpg";
 $logo_path1="../../logo_".$lab_config_id.".jpg";
 
 if(file_exists($logo_path1) === true)
-{	copy($logo_path1,$logo_path);
-	?>
-	<img src='<?php echo "logos/logo_".$lab_config_id.".jpg"; ?>' alt="Big Boat" height='140px'    ></src>
-	<?php
+{	
+	copy($logo_path1,$logo_path);
 }
-else if(file_exists($logo_path) === true)
-{
-?>
-	<img src='<?php echo "logos/logo_".$lab_config_id.".jpg"; ?>' alt="Big Boat" height='140px' width='140px'></src>
-	<?php
-}
+
+echo('<img src="logos/logo_' . $lab_config_id . '.jpg" alt="Big Boat" height="140px" width="140px"></src>');
+
+
 ?>
 </div>
 <!--//If condition for the font size
@@ -909,6 +905,9 @@ else
 				{
 				$id=$test->testTypeId;
 				$clinical_data=get_clinical_data_by_id($test->testTypeId);
+				echo("</br>");
+				echo('<img src="logos/logo_' . $lab_config_id . '.jpg" alt="Big Boat" height="140px" width="140px"></src>');
+				echo("</br>");
 		?>	
 				<?php
 				
