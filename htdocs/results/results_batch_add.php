@@ -151,7 +151,7 @@ function updatePatientDict(checkbox, patientId, patientJson) {
  <div>
 <?php
 $url = "print_page.php?location=".$_SESSION['lab_config_id'];
-$userDatesDict = [];
+$userDatesDict = array();
 ?>
 <form method="post" action="<?php echo $url; ?>" target="_blank">
 	<input type="hidden" name="patientDict" value="" id="patientDictInput">
@@ -255,7 +255,7 @@ $userDatesDict = [];
 				# Form date range from specimen collection date
 				$date_parts = explode("-", $specimen->dateRecvd);
 				$url1 = "reports_testhistory.php?location=".$_SESSION['lab_config_id']."&patient_id=$patient->patientId&yf=".$date_parts[0]."&mf=".$date_parts[1]."&df=".$date_parts[2]."&yt=".$date_parts[0]."&mt=".$date_parts[1]."&dt=".$date_parts[2]."&ip=1";
-				$datesDict = [];
+				$datesDict = array();
 				$datesDict['yf'] = $date_parts[0];
 				$datesDict['mf'] = $date_parts[1];
 				$datesDict['df'] = $date_parts[2];

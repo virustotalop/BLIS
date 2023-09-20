@@ -780,9 +780,11 @@ p.main {text-align:justify;}
 <hr>
 </div>
 <?php
-
-$patientDictJson = $_POST['patientDict'];
+global $log;
+$patientDictJson = '{"1521":{"patientId":"1521","addlId":"39234","name":"Samson Pruitt","dob":"1975-05-18","partialDob":null,"age":null,"sex":"M","surrogateId":"92133","createdBy":null,"hashValue":null,"regDate":"13-06-2010","specimenCount":0},"2683":{"patientId":"2683","addlId":"27254","name":"Clare Mccall","dob":"1990-06-05","partialDob":null,"age":null,"sex":"F","surrogateId":"52551","createdBy":null,"hashValue":null,"regDate":"01-03-2010","specimenCount":0},"2011":{"patientId":"2011","addlId":"91470","name":"Rashad Barnes","dob":"1949-05-23","partialDob":null,"age":null,"sex":"F","surrogateId":"91324","createdBy":null,"hashValue":null,"regDate":"04-05-2010","specimenCount":0},"1204":{"patientId":"1204","addlId":"10317","name":"Wanda Farrell","dob":"2002-10-16","partialDob":null,"age":null,"sex":"M","surrogateId":"70894","createdBy":null,"hashValue":null,"regDate":"01-03-2009","specimenCount":0},"1606":{"patientId":"1606","addlId":"95764","name":"Caleb Potter","dob":"1965-11-02","partialDob":null,"age":null,"sex":"F","surrogateId":"11982","createdBy":null,"hashValue":null,"regDate":"27-07-2010","specimenCount":0},"222":{"patientId":"222","addlId":"77649","name":"Ila Lane","dob":"1977-08-18","partialDob":null,"age":null,"sex":"F","surrogateId":"27407","createdBy":null,"hashValue":null,"regDate":"23-07-2009","specimenCount":0}}';
+$log->debug('dict: ' . $patientDictJson);
 $patientDict = json_decode($patientDictJson, true);
+$log->debug('patient dict: ' . implode($patientDict));
 foreach($patientDict as $patientId => $patient_arr) {
     echo '<div id="report_content_' . $patientId . '">';
     include("report_content.php");

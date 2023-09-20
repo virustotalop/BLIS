@@ -7,6 +7,8 @@
 include("../includes/db_lib.php");
 include("../includes/SessionCheck.php");
 $test_type_id = $_REQUEST['t_type'];
+global $log;
+$log->debug('test id: ' . $test_type_id);
 # Fetch all measures for this test type
 $test_type = TestType::getById($test_type_id);
 $measure_list = $test_type->getMeasures();
