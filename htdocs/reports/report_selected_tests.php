@@ -276,7 +276,7 @@ echo('<img src="logos/logo_' . $lab_config_id . '.jpg" alt="Big Boat" height="14
 <!--//If condition for the font size
 <STYLE>H3 {FONT-SIZE: <?php echo $size; ?>}</STYLE>-->
 <div id="report_word_content">
-<div >
+<div>
 
 <?php
 
@@ -896,6 +896,7 @@ else
 			}
 			$specimen_list= array();
 			$specimen_list=explode(",",$_REQUEST['specimen_array']);
+			$include_logo = false;
 			foreach($record_list as $record_set)
 			{
 				$value = $record_set;
@@ -903,11 +904,16 @@ else
 				$specimen = $value[1];
 				if(in_array($specimen->specimenId, $specimen_list))
 				{
+					echo('<div class="test">');
 				$id=$test->testTypeId;
 				$clinical_data=get_clinical_data_by_id($test->testTypeId);
-				echo("</br>");
-				echo('<img src="logos/logo_' . $lab_config_id . '.jpg" alt="Big Boat" height="140px" width="140px"></src>');
-				echo("</br>");
+				if ($include_logo) //So we don't include the logo for the first test
+				{
+					echo("</br>");
+					echo('<img src="logos/logo_' . $lab_config_id . '.jpg" alt="Big Boat" height="140px" width="140px"></src>');
+					echo("</br>");
+				}
+				$include_logo = true;
 		?>	
 				<?php
 				
@@ -1112,6 +1118,7 @@ else
 					echo LangUtil::$generalTerms['SP_STATUS']."&nbsp;&#45;&nbsp;";
 					echo $test->getStatus()."<br>";
 				}
+				echo('</div>');
 			}
 			}
 			?>
