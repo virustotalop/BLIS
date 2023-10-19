@@ -228,17 +228,22 @@ div.editable input {
 	width:700px;
 }
 
-@media all
-{
-  .page-break { display:none; }
-}
-@media print
-{
-	#options_header { display:none; }
-  }
-  div#docbody {
-  margin-top: 5em;
-  }
+@media print {
+	#options_header { 
+		display:none; 
+	}
+  
+	div#docbody {
+  		margin-top: 5em;
+	}
+
+	.test {
+		page-break-after: always;
+	}
+
+    .test:last-of-type {
+    	page-break-after: none;
+    }
 }
 
 .landscape_content {-moz-transform: rotate(90deg) translate(300px); }

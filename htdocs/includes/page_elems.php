@@ -8811,8 +8811,21 @@ $name_list = array("yyyy_to".$count, "mm_to".$count, "dd_to".$count);
 					</input>
 					<?php echo "Confirm before updating results" ?>
 				</td>
-
+			</tr> 
+			<tr valign='top'<?php
+			if($report_config->reportId == 6 || $report_config->reportId == 2)
+				echo " style='display:none;' ";
+			?>>
+				<td>
+					<input type='checkbox' name='t_field_11' <?php
+						if($report_config->pageBreak == 1)
+							echo " checked ";
+						?>>
+					</input>
+					<?php echo "Page break after every test" ?>
+				</td>
 			</tr>
+
 		</table>
 		<table>
 			<tr valign='top'>
@@ -9368,6 +9381,18 @@ $name_list = array("yyyy_to".$count, "mm_to".$count, "dd_to".$count);
 				</td>
 
 			</tr>
+			<tr valign='top'<?php
+			if($report_config->reportId == 6 || $report_config->reportId == 2)
+				echo " style='display:none;' ";
+			?>>
+				<td>
+					<?php
+					if($report_config->pageBreak == 1)
+						echo 'Page break after every test';
+					?>
+				</td>
+
+			</tr>			
 			</tbody>
 		</table>
 		<?php
