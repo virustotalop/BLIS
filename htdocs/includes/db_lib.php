@@ -707,6 +707,7 @@ class ReportConfig
 	public $useClinicalData;
 	public $usePrintConfirm;
 	public $useResultConfirm;
+	public $pageBreak;
 
 	public $useRequesterName;
 	public $useReferredToHospital;
@@ -948,6 +949,10 @@ class ReportConfig
 			$report_config->useResultConfirm = 0;
 		else
 			$report_config->useResultConfirm =$test_field_list[11];
+		if(!isset($test_field_list[12]))
+			$report_config->pageBreak = 0;
+		else
+			$report_config->pageBreak =$test_field_list[12];
 
 		# Return data object
 		return $report_config;
