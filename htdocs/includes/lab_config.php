@@ -152,11 +152,6 @@ class LabConfig
         } else {
             $lab_config->ageLimit = 5;
         }
-        if (isset($record['pageBreak'])) {
-            $lab_config->pageBreak = $record['pageBreak'];
-        } else {
-            $lab_config->pageBreak = 1;
-        }
         $lab_config->site_choice_enabled = $record['site_choice_enabled'];
         $lab_config->blis_cloud_hostname = $record['blis_cloud_hostname'];
         return $lab_config;
