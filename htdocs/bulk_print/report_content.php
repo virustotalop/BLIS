@@ -39,6 +39,12 @@
             #report_content:last-of-type {
                 page-break-after: none;
             }
+            .patient-row {
+                page-break-after: always;
+            }
+            .patient-row:last-of-type {
+                page-break-after: none;
+            }            
         }
     </style>
     <style type='text/css'>
@@ -384,7 +390,7 @@
                     $id=$test->testTypeId;
                     $clinical_data=get_clinical_data_by_id($test->testTypeId)
                     ?>
-                    <tr valign='top'>
+                    <tr class="patient-row" valign='top'>
                     <?php
                     if($report_config->useSpecimenAddlId != 0) {
                         echo "<td class='rstyle'>";
