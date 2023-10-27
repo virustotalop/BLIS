@@ -38,6 +38,7 @@ DbUtil::switchToLabConfig($lab_config_id);
 $lab_config = get_lab_config_by_id($lab_config_id);
 $report_id = $REPORT_ID_ARRAY['reports_testhistory.php'];
 $report_config = $lab_config->getReportConfig($report_id);
+$page_break = $report_config->pageBreak;
 $margin_list = $report_config->margins;
 for($i = 0; $i < count($margin_list); $i++)
 {

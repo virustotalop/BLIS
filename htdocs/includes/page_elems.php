@@ -8817,7 +8817,7 @@ $name_list = array("yyyy_to".$count, "mm_to".$count, "dd_to".$count);
 				echo " style='display:none;' ";
 			?>>
 				<td>
-					<input type='checkbox' name='t_field_11' <?php
+					<input type='checkbox' name='t_field_12' <?php
 						if($report_config->pageBreak == 1)
 							echo " checked ";
 						?>>
